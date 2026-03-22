@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Laroca Dev — Desenvolvimento web profissional. Sites, sistemas e soluções digitais para o seu negócio.">
+  <meta property="og:title" content="Laroca Dev — Desenvolvimento Web Profissional">
+  <meta property="og:description" content="Sites profissionais, sistemas web e soluções digitais. Projetos reais, entrega no prazo, resultado garantido.">
+  <meta property="og:url" content="https://laroca.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Laroca Dev — Desenvolvimento Web Profissional</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Cursor customizado (desktop only) -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">Laroca<span>.dev</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicos" class="nav-link">Serviços</a></li>
+      <li><a href="#vitrine" class="nav-link">Projetos</a></li>
+      <li><a href="#precos" class="nav-link">Preços</a></li>
+      <li><a href="#processo" class="nav-link">Como funciona</a></li>
+      <li>
+        <a href="https://wa.me/5542998650294?text=Olá%20Lucas!%20Vi%20o%20site%20Laroca.dev%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+           target="_blank" rel="noopener noreferrer"
+           class="nav-cta">
+          Solicitar Orçamento
+        </a>
+      </li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Desenvolvedor disponível para novos projetos
+      </div>
+      <h1 class="hero-h1">
+        Seu negócio<br>
+        merece um site<br>
+        <span class="hero-accent">que converte.</span>
+      </h1>
+      <p class="hero-sub">
+        Criação de sites profissionais, sistemas web e soluções digitais personalizadas.
+        Do layout ao deploy — entrego resultado real para o seu negócio.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5542998650294?text=Olá%20Lucas!%20Gostaria%20de%20solicitar%20um%20orçamento."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary">
+          Solicitar Orçamento Grátis
+        </a>
+        <a href="#vitrine" class="btn-ghost">Ver Projetos</a>
+      </div>
+      <div class="hero-numbers">
+        <div class="hero-num">
+          <span class="hero-num-val">6+</span>
+          <span class="hero-num-label">Projetos entregues</span>
+        </div>
+        <div class="hero-num">
+          <span class="hero-num-val">5+</span>
+          <span class="hero-num-label">Anos em TI</span>
+        </div>
+        <div class="hero-num">
+          <span class="hero-num-val">100%</span>
+          <span class="hero-num-label">Satisfação garantida</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <header class="section-header reveal">
+      <p class="section-eyebrow">// o que ofereço</p>
+      <h2 class="section-h2">Serviços <span>profissionais</span></h2>
+      <p class="section-sub">Soluções completas do design ao deploy. Você foca no negócio, eu cuido da tecnologia.</p>
+    </header>
+    <div class="servicos-grid">
+
+      <article class="servico-card reveal">
+        <div class="servico-icon" aria-hidden="true">🌐</div>
+        <h3 class="servico-title">Sites Institucionais</h3>
+        <p class="servico-desc">Site profissional para apresentar seu negócio, captar clientes e gerar autoridade online.</p>
+        <ul class="servico-items">
+          <li class="servico-item">Design personalizado</li>
+          <li class="servico-item">Responsivo para mobile</li>
+          <li class="servico-item">Formulário WhatsApp integrado</li>
+          <li class="servico-item">SEO básico configurado</li>
+          <li class="servico-item">Hospedagem inclusa*</li>
+        </ul>
+      </article>
+
+      <article class="servico-card reveal">
+        <div class="servico-icon" aria-hidden="true">🛒</div>
+        <h3 class="servico-title">Landing Pages & E-commerce</h3>
+        <p class="servico-desc">Páginas de alta conversão para campanhas, produtos ou lançamentos com foco em resultados.</p>
+        <ul class="servico-items">
+          <li class="servico-item">Otimizada para conversão</li>
+          <li class="servico-item">Integração com pagamento</li>
+          <li class="servico-item">Catálogo de produtos</li>
+          <li class="servico-item">Analytics e métricas</li>
+          <li class="servico-item">Velocidade otimizada</li>
+        </ul>
+      </article>
+
+      <article class="servico-card reveal">
+        <div class="servico-icon" aria-hidden="true">⚙️</div>
+        <h3 class="servico-title">Sistemas Web & APIs</h3>
+        <p class="servico-desc">Sistemas personalizados, painéis administrativos, APIs e automações para o seu negócio.</p>
+        <ul class="servico-items">
+          <li class="servico-item">Dashboard e painel admin</li>
+          <li class="servico-item">API REST com banco de dados</li>
+          <li class="servico-item">Automações e integrações</li>
+          <li class="servico-item">Autenticação e segurança</li>
+          <li class="servico-item">Deploy em cloud (AWS/VPS)</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- VITRINE -->
+  <section id="vitrine">
+    <header class="vitrine-header reveal">
+      <div>
+        <p class="section-eyebrow">// projetos reais</p>
+        <h2 class="section-h2">Cases <span>entregues</span></h2>
+      </div>
+      <a href="https://github.com/LarocaLucas" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-sm">
+        Ver todos no GitHub →
+      </a>
+    </header>
+    <div class="vitrine-grid">
+
+      <article class="vitrine-card reveal" style="--card-color: rgba(0,245,255,0.15)">
+        <div class="vitrine-img" style="background: linear-gradient(135deg,#050508,#0a0a14)">
+          <span class="vitrine-placeholder" style="color:rgba(0,245,255,0.25)">DOOR</span>
+        </div>
+        <div class="vitrine-body">
+          <p class="vitrine-cat">Balada · Entretenimento</p>
+          <h3 class="vitrine-title">Door PG</h3>
+          <p class="vitrine-desc">Site completo com countdown de lançamento, galeria de fotos com download, reservas e domínio próprio doorpg.com.br.</p>
+          <a href="https://doorpg.com.br" target="_blank" rel="noopener noreferrer" class="vitrine-link">Ver projeto →</a>
+        </div>
+      </article>
+
+      <article class="vitrine-card reveal" style="--card-color: rgba(200,169,110,0.15)">
+        <div class="vitrine-img" style="background: linear-gradient(135deg,#0f0a05,#1a1205)">
+          <span class="vitrine-placeholder" style="color:rgba(200,169,110,0.25)">AD</span>
+        </div>
+        <div class="vitrine-body">
+          <p class="vitrine-cat">Decoração · Eventos</p>
+          <h3 class="vitrine-title">Andreia Decorações</h3>
+          <p class="vitrine-desc">Site elegante com galeria por álbuns rotativos, formulário integrado ao WhatsApp e identidade visual luxury.</p>
+          <a href="https://larocalucas.github.io/andreia-decoracoes" target="_blank" rel="noopener noreferrer" class="vitrine-link">Ver projeto →</a>
+        </div>
+      </article>
+
+      <article class="vitrine-card reveal" style="--card-color: rgba(155,48,255,0.15)">
+        <div class="vitrine-img" style="background: linear-gradient(135deg,#080408,#0f060f)">
+          <span class="vitrine-placeholder" style="color:rgba(155,48,255,0.25)">DJ</span>
+        </div>
+        <div class="vitrine-body">
+          <p class="vitrine-cat">Música · Entretenimento</p>
+          <h3 class="vitrine-title">DJ Laroca</h3>
+          <p class="vitrine-desc">Site oficial com slideshow hero, galeria mosaico de 109 fotos e vídeo Shorts integrado. Estética neon/underground.</p>
+          <a href="https://larocalucas.github.io/djlaroca" target="_blank" rel="noopener noreferrer" class="vitrine-link">Ver projeto →</a>
+        </div>
+      </article>
+
+      <article class="vitrine-card reveal" style="--card-color: rgba(200,169,110,0.15)">
+        <div class="vitrine-img" style="background: linear-gradient(135deg,#0a0806,#141008)">
+          <span class="vitrine-placeholder" style="color:rgba(200,169,110,0.25)">DR</span>
+        </div>
+        <div class="vitrine-body">
+          <p class="vitrine-cat">Música · Institucional</p>
+          <h3 class="vitrine-title">DJ Reinaldo</h3>
+          <p class="vitrine-desc">Site editorial para DJ com 30+ anos de carreira. Galeria masonry, layout split e identidade grafite/dourado.</p>
+          <a href="https://larocalucas.github.io/djreinaldo" target="_blank" rel="noopener noreferrer" class="vitrine-link">Ver projeto →</a>
+        </div>
+      </article>
+
+      <article class="vitrine-card reveal" style="--card-color: rgba(0,255,136,0.15)">
+        <div class="vitrine-img" style="background: linear-gradient(135deg,#030803,#051205)">
+          <span class="vitrine-placeholder" style="color:rgba(0,255,136,0.25)">CLI</span>
+        </div>
+        <div class="vitrine-body">
+          <p class="vitrine-cat">Python · Backend</p>
+          <h3 class="vitrine-title">HelpDesk CLI</h3>
+          <p class="vitrine-desc">Sistema de tickets de suporte em Python + SQLite com CRUD completo, relatórios e interface Rich no terminal.</p>
+          <a href="https://github.com/LarocaLucas/helpdesk-cli" target="_blank" rel="noopener noreferrer" class="vitrine-link">Ver repositório →</a>
+        </div>
+      </article>
+
+      <article class="vitrine-card reveal" style="--card-color: rgba(255,214,10,0.15)">
+        <div class="vitrine-img" style="background: linear-gradient(135deg,#050808,#080f0f)">
+          <span class="vitrine-placeholder" style="color:rgba(255,214,10,0.25)">AWS</span>
+        </div>
+        <div class="vitrine-body">
+          <p class="vitrine-cat">Cloud · Infraestrutura</p>
+          <h3 class="vitrine-title">AWS Dev Environment</h3>
+          <p class="vitrine-desc">Ambiente de desenvolvimento completo na AWS com Ubuntu, Docker e VS Code. Totalmente documentado.</p>
+          <a href="https://github.com/LarocaLucas/aws-dev-environment" target="_blank" rel="noopener noreferrer" class="vitrine-link">Ver repositório →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PREÇOS -->
+  <section id="precos">
+    <header class="precos-header reveal">
+      <p class="section-eyebrow">// investimento</p>
+      <h2 class="section-h2">Faixas de <span>preço</span></h2>
+      <p class="section-sub">Valores de referência para o mercado de Castro/PG — PR. Cada projeto é único e recebe orçamento personalizado.</p>
+      <p class="precos-note">* Valores estimados. Orçamento final mediante briefing do projeto.</p>
+    </header>
+    <div class="precos-grid">
+
+      <article class="preco-card reveal">
+        <p class="preco-tier">Starter</p>
+        <h3 class="preco-title">Site Vitrine</h3>
+        <div class="preco-range">
+          <p class="preco-from">a partir de</p>
+          <p class="preco-val">R$ 600</p>
+        </div>
+        <p class="preco-obs">Ideal para profissionais autônomos e pequenos negócios</p>
+        <hr class="preco-divider">
+        <ul class="preco-items">
+          <li class="preco-item preco-item--yes">Até 5 seções</li>
+          <li class="preco-item preco-item--yes">Design responsivo</li>
+          <li class="preco-item preco-item--yes">Formulário WhatsApp</li>
+          <li class="preco-item preco-item--yes">SEO básico</li>
+          <li class="preco-item preco-item--yes">Hospedagem inclusa*</li>
+          <li class="preco-item preco-item--no">Painel de edição</li>
+          <li class="preco-item preco-item--no">Blog / E-commerce</li>
+        </ul>
+        <a href="https://wa.me/5542998650294?text=Olá!%20Gostaria%20de%20orçamento%20para%20um%20*Site%20Vitrine*."
+           target="_blank" rel="noopener noreferrer"
+           class="preco-cta preco-cta--outline">
+          Solicitar Orçamento
+        </a>
+      </article>
+
+      <article class="preco-card preco-card--destaque reveal">
+        <div class="preco-badge">MAIS PEDIDO</div>
+        <p class="preco-tier">Pro</p>
+        <h3 class="preco-title">Site Completo</h3>
+        <div class="preco-range">
+          <p class="preco-from">a partir de</p>
+          <p class="preco-val">R$ 1.200</p>
+        </div>
+        <p class="preco-obs">Para empresas e profissionais que querem se destacar</p>
+        <hr class="preco-divider">
+        <ul class="preco-items">
+          <li class="preco-item preco-item--yes">Páginas ilimitadas</li>
+          <li class="preco-item preco-item--yes">Design premium</li>
+          <li class="preco-item preco-item--yes">Galeria com filtros</li>
+          <li class="preco-item preco-item--yes">Animações e efeitos</li>
+          <li class="preco-item preco-item--yes">Domínio + hospedagem*</li>
+          <li class="preco-item preco-item--yes">SEO otimizado</li>
+          <li class="preco-item preco-item--yes">30 dias de suporte</li>
+        </ul>
+        <a href="https://wa.me/5542998650294?text=Olá!%20Gostaria%20de%20orçamento%20para%20um%20*Site%20Completo*."
+           target="_blank" rel="noopener noreferrer"
+           class="preco-cta preco-cta--filled">
+          Solicitar Orçamento
+        </a>
+      </article>
+
+      <article class="preco-card reveal">
+        <p class="preco-tier">Custom</p>
+        <h3 class="preco-title">Sistema / App Web</h3>
+        <div class="preco-range">
+          <p class="preco-from">a partir de</p>
+          <p class="preco-val">R$ 2.500</p>
+        </div>
+        <p class="preco-obs">Para projetos com backend, banco de dados e lógica personalizada</p>
+        <hr class="preco-divider">
+        <ul class="preco-items">
+          <li class="preco-item preco-item--yes">Frontend + Backend</li>
+          <li class="preco-item preco-item--yes">Banco de dados</li>
+          <li class="preco-item preco-item--yes">Autenticação</li>
+          <li class="preco-item preco-item--yes">API REST</li>
+          <li class="preco-item preco-item--yes">Deploy em cloud</li>
+          <li class="preco-item preco-item--yes">Documentação</li>
+          <li class="preco-item preco-item--yes">60 dias de suporte</li>
+        </ul>
+        <a href="https://wa.me/5542998650294?text=Olá!%20Gostaria%20de%20orçamento%20para%20um%20*Sistema%20Web*."
+           target="_blank" rel="noopener noreferrer"
+           class="preco-cta preco-cta--outline">
+          Solicitar Orçamento
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo">
+    <header class="section-header reveal">
+      <p class="section-eyebrow">// como funciona</p>
+      <h2 class="section-h2">Do briefing ao <span>deploy</span></h2>
+    </header>
+    <div class="processo-grid">
+      <div class="processo-step reveal">
+        <p class="step-num">01</p>
+        <h3 class="step-title">Briefing</h3>
+        <p class="step-desc">Você me conta o que precisa — público-alvo, estilo, referências e funcionalidades. Levanto tudo por WhatsApp ou call.</p>
+      </div>
+      <div class="processo-step reveal">
+        <p class="step-num">02</p>
+        <h3 class="step-title">Proposta</h3>
+        <p class="step-desc">Envio orçamento detalhado com escopo, prazo e valores. Sem surpresas. Aprovado, começamos.</p>
+      </div>
+      <div class="processo-step reveal">
+        <p class="step-num">03</p>
+        <h3 class="step-title">Desenvolvimento</h3>
+        <p class="step-desc">Código limpo, responsivo e com boas práticas. Você acompanha o progresso e dá feedbacks durante o processo.</p>
+      </div>
+      <div class="processo-step reveal">
+        <p class="step-num">04</p>
+        <h3 class="step-title">Entrega & Suporte</h3>
+        <p class="step-desc">Deploy, domínio configurado e site no ar. Suporte incluso no período contratado para ajustes e dúvidas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final">
+    <div class="cta-wrap reveal">
+      <p class="section-eyebrow">// próximo passo</p>
+      <h2 class="section-h2">Pronto para <span>começar?</span></h2>
+      <p class="cta-sub">Me manda uma mensagem no WhatsApp — o orçamento é gratuito e sem compromisso.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/5542998650294?text=Olá%20Lucas!%20Vi%20o%20Laroca.dev%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary">
+          💬 Falar no WhatsApp
+        </a>
+        <a href="mailto:lucas.laroca.campos@gmail.com" class="btn-ghost">
+          ✉ Enviar E-mail
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Laroca<span>.dev</span></p>
+        <p class="footer-tagline">Desenvolvimento web profissional</p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <a href="https://larocalucas.github.io" target="_blank" rel="noopener noreferrer">Portfólio</a>
+        <a href="https://github.com/LarocaLucas" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:lucas.laroca.campos@gmail.com">E-mail</a>
+      </nav>
+      <p class="footer-contact">(42) 99865-0294</p>
+    </div>
+    <p class="footer-bottom">© 2026 Laroca Dev — Lucas Laroca Campos · Castro, PR</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
