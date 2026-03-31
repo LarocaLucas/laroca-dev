@@ -736,8 +736,9 @@ ul { list-style: none; }
   font-display: swap;
 }
 
-/* Aplicar no título hero */
-.hero-h1 {
+/* Aplicar no título hero e subtítulo */
+.hero-h1,
+.hero-role-sub {
   font-family: 'Ryzes', var(--display), sans-serif !important;
   letter-spacing: 0.05em;
 }
