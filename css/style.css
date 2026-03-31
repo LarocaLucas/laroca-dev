@@ -162,11 +162,31 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: var(--display); font-size: 0.9rem; font-weight: 700;
+  font-family: 'Ryzes', var(--display), sans-serif;
+  font-size: 1rem; font-weight: 700;
   color: var(--purple); letter-spacing: 0.15em;
   text-shadow: 0 0 12px var(--purple-glow);
+  position: relative;
 }
 .nav-logo span { color: var(--lilac); }
+
+/* Glitch no logo da nav — timing diferente do hero */
+.nav-logo::before {
+  content: attr(data-text);
+  position: absolute; top: 0; left: 0;
+  color: var(--pink);
+  animation: glitch1 6s infinite 1.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  pointer-events: none;
+}
+.nav-logo::after {
+  content: attr(data-text);
+  position: absolute; top: 0; left: 0;
+  color: var(--purple);
+  animation: glitch2 6s infinite 1.5s;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
 
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-link {
