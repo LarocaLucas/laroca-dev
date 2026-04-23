@@ -378,10 +378,24 @@ ul { list-style: none; }
 }
 
 .hero-deco {
-  position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
-  animation: float 4s ease-in-out infinite; opacity: 0.45; pointer-events: none;
+  position: absolute;
+  /* Preenche a metade direita abaixo da navbar */
+  left: 42%;
+  right: 0;
+  top: var(--nav-h);   /* começa logo abaixo da barra de navegação */
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+  overflow: hidden;
+  z-index: 1;
 }
-.hero-deco svg { width: min(260px, 28vw); height: auto; }
+#hud-canvas {
+  display: block;
+  flex-shrink: 0;
+}
 
 /* ── SERVIÇOS ───────────────────────────────────────────── */
 #servicos { background: var(--panel); border-top: 1px solid var(--border); }
