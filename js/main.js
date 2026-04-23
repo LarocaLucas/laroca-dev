@@ -1,6 +1,6 @@
 /**
  * main.js — JavaScript do Laroca Dev
- * Módulos: cursor, navbar scroll + mobile, scroll reveal
+ * Módulos: cursor, navbar scroll + mobile, scroll reveal, matrix rain
  */
 
 'use strict';
@@ -94,4 +94,92 @@
   );
 
   elements.forEach(el => observer.observe(el));
+})();
+
+
+/* ── 4. MATRIX RAIN ROXO ────────────────────────────────────
+ * Canvas animado com caracteres caindo na cor roxa #b347ff
+ * Funciona em desktop e mobile, fica atrás de todo conteúdo
+ * via z-index: -1 no CSS. Throttle ~30fps para não onerar CPU.
+ ─────────────────────────────────────────────────────────── */
+(function initMatrix() {
+  const canvas = document.getElementById('matrix-canvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+
+  // Conjunto de caracteres: letras, números, símbolos de código
+  const chars =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' +
+    '0123456789<>{}[]()=+*&%$#@!?/\\|^~`;:' +
+    'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäå';
+
+  const FONT_SIZE = 14;        // tamanho do caractere em px
+  const COLOR     = '#b347ff'; // roxo principal da identidade
+  const TRAIL     = 'rgba(5, 5, 8, 0.045)'; // rastro de cauda
+  const TIP_COLOR = 'rgba(212, 168, 255, 0.75)'; // ponta lilás
+
+  let columns = 0;
+  let drops   = [];
+
+  /** Redimensiona o canvas e reinicializa colunas conforme viewport. */
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const newColumns = Math.floor(canvas.width / FONT_SIZE);
+    const prev = drops.slice();
+
+    // Preserva posições existentes; inicia novas em Y negativo aleatório
+    drops = Array.from({ length: newColumns }, (_, i) =>
+      prev[i] !== undefined
+        ? prev[i]
+        : Math.random() * -(canvas.height / FONT_SIZE)
+    );
+    columns = newColumns;
+  }
+
+  /** Renderiza um frame da chuva Matrix. */
+  function draw() {
+    // Overlay escuro semi-transparente cria o efeito de cauda/rastro
+    ctx.fillStyle = TRAIL;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.font = `${FONT_SIZE}px 'Share Tech Mono', monospace`;
+
+    for (let i = 0; i < columns; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      const x    = i * FONT_SIZE;
+      const y    = drops[i] * FONT_SIZE;
+
+      // Ponta da gota mais clara (lilás) para destaque visual
+      ctx.fillStyle = TIP_COLOR;
+      ctx.fillText(char, x, y);
+      ctx.fillStyle = COLOR;
+
+      // Reseta a gota aleatoriamente após ultrapassar a tela
+      if (y > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i] += 0.5; // velocidade moderada — efeito suave, não ansioso
+    }
+  }
+
+  // Inicializa e escuta redimensionamento
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  // Loop de animação com throttle ~30fps
+  let lastTime = 0;
+  const INTERVAL = 33; // ~30fps
+
+  function loop(timestamp) {
+    if (timestamp - lastTime >= INTERVAL) {
+      draw();
+      lastTime = timestamp;
+    }
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
 })();

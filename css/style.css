@@ -49,6 +49,17 @@ ul { list-style: none; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
 
+/* ── CANVAS MATRIX ROXO ─────────────────────────────────── */
+#matrix-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.18;
+}
+
 /* ── CURSOR (desktop only) ──────────────────────────────── */
 @media (hover: hover) and (pointer: fine) {
   body { cursor: none; }
@@ -379,6 +390,11 @@ ul { list-style: none; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 
+/* Grid de 4 cards — 2 colunas desktop amplo, 2x2 */
+.servicos-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .servico-card {
   border: 1px solid var(--border); background: var(--dark); padding: 2rem;
   position: relative; overflow: hidden;
@@ -470,7 +486,7 @@ ul { list-style: none; }
   font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); margin-top: 0.8rem;
 }
 .precos-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: start;
 }
 
 .preco-card {
@@ -534,11 +550,129 @@ ul { list-style: none; }
 .preco-cta--outline { border: 1px solid var(--border); color: var(--text-dim); }
 .preco-cta--outline:hover { border-color: var(--purple); color: var(--purple); }
 
+/* Card de preço Consultoria — badge NOVO roxo-pink e valor especial */
+.preco-card--consultoria {
+  border-color: rgba(212,168,255,0.35);
+  background: linear-gradient(135deg, rgba(179,71,255,0.04), rgba(255,0,110,0.03));
+}
+.preco-card--consultoria:hover { border-color: var(--lilac); }
+
+.preco-badge--consultoria {
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  box-shadow: 0 0 12px rgba(255,0,110,0.3);
+}
+
+.preco-val--consultar {
+  font-size: 1.5rem !important;
+  background: linear-gradient(90deg, var(--purple), var(--lilac));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+/* ── DESTAQUE CONSULTORIA DE TI ───────────────────────── */
+.consultoria-destaque {
+  margin-top: 2.5rem;
+  background: linear-gradient(135deg, rgba(179,71,255,0.06), rgba(212,168,255,0.04));
+  border: 1px solid rgba(179,71,255,0.25);
+  border-top: 2px solid var(--purple);
+  position: relative;
+  overflow: hidden;
+}
+.consultoria-destaque::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(179,71,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.consultoria-destaque-inner {
+  padding: 2.5rem 3rem;
+}
+.consultoria-badge {
+  font-family: var(--mono); font-size: 0.58rem;
+  color: var(--purple); letter-spacing: 0.3em;
+  text-transform: uppercase; display: inline-block; margin-bottom: 1rem;
+}
+.consultoria-icon {
+  font-size: 2.5rem; margin-bottom: 0.8rem;
+}
+.consultoria-title {
+  font-family: var(--display); font-size: 1.6rem; font-weight: 700;
+  margin-bottom: 0.8rem; color: var(--text);
+}
+.consultoria-sub {
+  font-size: 0.92rem; line-height: 1.75; color: var(--text-dim);
+  max-width: 680px; margin-bottom: 2rem;
+}
+.consultoria-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.consultoria-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  padding: 1.4rem;
+  transition: border-color 0.3s;
+}
+.consultoria-item:hover { border-color: var(--purple); }
+.consultoria-item-icon { font-size: 1.5rem; display: block; margin-bottom: 0.6rem; }
+.consultoria-item strong {
+  font-family: var(--display); font-size: 0.8rem; font-weight: 700;
+  display: block; margin-bottom: 0.4rem;
+}
+.consultoria-item p {
+  font-size: 0.8rem; line-height: 1.65; color: var(--text-dim);
+}
+.consultoria-cta { display: inline-block; }
+
 /* ── PROCESSO ───────────────────────────────────────────── */
 #processo { background: var(--black); border-top: 1px solid var(--border); }
-.processo-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem;
+
+/* Bloco agrupador (sites / consultoria) */
+.processo-bloco { margin-bottom: 3.5rem; }
+.processo-bloco:last-child { margin-bottom: 0; }
+
+.processo-bloco-label {
+  font-family: var(--mono); font-size: 0.62rem;
+  color: var(--purple); letter-spacing: 0.25em; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-left: 2px solid var(--purple);
+  background: rgba(179,71,255,0.05);
+  display: inline-block;
 }
+
+/* Bloco consultoria com tom levemente diferenciado */
+.processo-bloco--consultoria .processo-bloco-label {
+  color: var(--lilac); border-left-color: var(--lilac);
+  background: rgba(212,168,255,0.05);
+}
+.processo-bloco--consultoria .step-num { color: var(--lilac); }
+
+/* Divisor entre os dois blocos */
+.processo-divisor {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 2rem 0 3rem;
+  position: relative;
+}
+.processo-divisor::after {
+  content: '// consultoria';
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--mono); font-size: 0.55rem;
+  color: var(--text-dim); background: var(--black);
+  padding: 0 1rem; letter-spacing: 0.2em;
+}
+
+.processo-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem;
+}
+
+/* Grid de 4 colunas para a consultoria */
+.processo-grid--4c { grid-template-columns: repeat(4, 1fr); }
 .processo-step { position: relative; }
 .processo-step:not(:last-child)::after {
   content: '→'; position: absolute; right: -1rem; top: 1.5rem;
@@ -599,12 +733,17 @@ ul { list-style: none; }
   .nav-toggle { display: flex; }
 
   #servicos, #vitrine, #precos, #processo, #cta-final { padding: 4rem 1.5rem; }
+  #identificacao, #diferenciais { padding: 4rem 1.5rem; }
   #hero { padding: calc(var(--nav-h) + 2rem) 1.5rem 3rem; }
   .hero-deco { display: none; }
   .servicos-grid { grid-template-columns: 1fr; }
+  .servicos-grid--4 { grid-template-columns: 1fr 1fr; }
+  .consultoria-destaque-inner { padding: 2rem 1.5rem; }
+  .consultoria-grid { grid-template-columns: 1fr 1fr; }
   .vitrine-grid  { grid-template-columns: 1fr 1fr; }
-  .precos-grid   { grid-template-columns: 1fr; }
+  .precos-grid   { grid-template-columns: 1fr 1fr; }
   .processo-grid { grid-template-columns: 1fr 1fr; }
+  .processo-grid--4c { grid-template-columns: 1fr 1fr; }
   .processo-step::after { display: none; }
   .footer-inner  { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
   .footer-bottom { padding: 1rem 1.5rem; }
@@ -613,6 +752,10 @@ ul { list-style: none; }
 @media (max-width: 600px) {
   .vitrine-grid  { grid-template-columns: 1fr; }
   .processo-grid { grid-template-columns: 1fr; }
+  .processo-grid--4c { grid-template-columns: 1fr; }
+  .servicos-grid--4 { grid-template-columns: 1fr; }
+  .consultoria-grid { grid-template-columns: 1fr; }
+  .precos-grid { grid-template-columns: 1fr; }
   .hero-ctas  { flex-direction: column; }
   .hero-ctas a { text-align: center; }
   .cta-btns   { flex-direction: column; }
@@ -717,11 +860,7 @@ ul { list-style: none; }
   font-size: 0.83rem; line-height: 1.7; color: var(--text-dim);
 }
 
-/* ── PROCESSO — 5 etapas ────────────────────────────────── */
-/* Sobrescreve o grid de 4 para 5 colunas */
-#processo .processo-grid {
-  grid-template-columns: repeat(5, 1fr);
-}
+/* Nota: .processo-grid já define repeat(5,1fr) e .processo-grid--4c define repeat(4,1fr) */
 
 /* ── FOOTER — links centralizados ───────────────────────── */
 .footer-inner {

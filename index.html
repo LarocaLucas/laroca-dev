@@ -4,11 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Laroca Dev — Desenvolvimento web profissional. Sites, sistemas e soluções digitais para o seu negócio.">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Laroca Dev — Desenvolvimento Web Profissional">
   <meta property="og:description" content="Sites profissionais, sistemas web e soluções digitais. Projetos reais, entrega no prazo, resultado garantido.">
   <meta property="og:url" content="https://laroca.dev">
+  <meta property="og:image" content="https://laroca.dev/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Laroca Dev — Desenvolvimento Web Profissional">
+  <meta name="twitter:description" content="Sites profissionais, sistemas web e soluções digitais. Projetos reais, entrega no prazo, resultado garantido.">
+  <meta name="twitter:image" content="https://laroca.dev/og-image.svg">
+
   <title>Laroca Dev — Desenvolvimento Web Profissional</title>
+
+  <!-- Favicon SVG inline (LD cyberpunk) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050508'/%3E%3Crect x='1' y='1' width='30' height='30' fill='none' stroke='%23b347ff' stroke-width='1' opacity='0.6'/%3E%3Crect x='1' y='1' width='4' height='4' fill='%23b347ff'/%3E%3Crect x='27' y='1' width='4' height='4' fill='%23b347ff'/%3E%3Crect x='1' y='27' width='4' height='4' fill='%23b347ff'/%3E%3Crect x='27' y='27' width='4' height='4' fill='%23b347ff'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Orbitron%2C monospace' font-size='14' font-weight='900' fill='%23b347ff'%3ELD%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050508'/%3E%3Crect x='1' y='1' width='30' height='30' fill='none' stroke='%23b347ff' stroke-width='1' opacity='0.6'/%3E%3Crect x='1' y='1' width='4' height='4' fill='%23b347ff'/%3E%3Crect x='27' y='1' width='4' height='4' fill='%23b347ff'/%3E%3Crect x='1' y='27' width='4' height='4' fill='%23b347ff'/%3E%3Crect x='27' y='27' width='4' height='4' fill='%23b347ff'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Orbitron%2C monospace' font-size='14' font-weight='900' fill='%23b347ff'%3ELD%3C/text%3E%3C/svg%3E">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +34,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Canvas Matrix roxo — fica atrás de todo conteúdo -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
   <!-- Cursor customizado (desktop only) -->
   <div id="cursor" aria-hidden="true"></div>
@@ -146,7 +164,7 @@
       <h2 class="section-h2">Serviços <span>profissionais</span></h2>
       <p class="section-sub">Soluções completas do design ao deploy. Você foca no negócio, eu cuido da tecnologia.</p>
     </header>
-    <div class="servicos-grid">
+    <div class="servicos-grid servicos-grid--4">
 
       <article class="servico-card reveal">
         <div class="servico-icon" aria-hidden="true">🌐</div>
@@ -163,7 +181,7 @@
 
       <article class="servico-card reveal">
         <div class="servico-icon" aria-hidden="true">🛒</div>
-        <h3 class="servico-title">Landing Pages & E-commerce</h3>
+        <h3 class="servico-title">Landing Pages &amp; E-commerce</h3>
         <p class="servico-desc">Páginas de alta conversão para campanhas, produtos ou lançamentos com foco em resultados.</p>
         <ul class="servico-items">
           <li class="servico-item">Otimizada para conversão</li>
@@ -176,7 +194,7 @@
 
       <article class="servico-card reveal">
         <div class="servico-icon" aria-hidden="true">⚙️</div>
-        <h3 class="servico-title">Sistemas Web & APIs</h3>
+        <h3 class="servico-title">Sistemas Web &amp; APIs</h3>
         <p class="servico-desc">Sistemas personalizados, painéis administrativos, APIs e automações para o seu negócio.</p>
         <ul class="servico-items">
           <li class="servico-item">Dashboard e painel admin</li>
@@ -187,6 +205,55 @@
         </ul>
       </article>
 
+    </div>
+
+    <!-- Destaque Consultoria de TI — card full-width separado -->
+    <div class="consultoria-destaque reveal">
+      <div class="consultoria-destaque-inner">
+        <div class="consultoria-destaque-header">
+          <span class="consultoria-badge">// NOVO SERVIÇO</span>
+          <div class="consultoria-icon" aria-hidden="true">🔍</div>
+          <h3 class="consultoria-title">Consultoria de TI</h3>
+          <p class="consultoria-sub">Análise completa do ambiente tecnológico da sua empresa — identifico gargalos, riscos e oportunidades de melhoria com um plano de ação claro e objetivo.</p>
+        </div>
+        <div class="consultoria-grid">
+          <div class="consultoria-item">
+            <span class="consultoria-item-icon">🖥️</span>
+            <strong>Diagnóstico de infraestrutura</strong>
+            <p>Mapeio toda a estrutura física e lógica do ambiente de TI atual.</p>
+          </div>
+          <div class="consultoria-item">
+            <span class="consultoria-item-icon">🔒</span>
+            <strong>Análise de redes e segurança</strong>
+            <p>Identifico vulnerabilidades, riscos de acesso e pontos críticos de segurança.</p>
+          </div>
+          <div class="consultoria-item">
+            <span class="consultoria-item-icon">💰</span>
+            <strong>Avaliação de custos de TI</strong>
+            <p>Reviso licenças, serviços e ferramentas para reduzir gastos desnecessários.</p>
+          </div>
+          <div class="consultoria-item">
+            <span class="consultoria-item-icon">🗺️</span>
+            <strong>Plano de modernização</strong>
+            <p>Entrego um roadmap claro e priorizado para evolução tecnológica do negócio.</p>
+          </div>
+          <div class="consultoria-item">
+            <span class="consultoria-item-icon">☁️</span>
+            <strong>Migração para nuvem</strong>
+            <p>Planejamento e execução de migração para AWS, Azure ou GCP com segurança.</p>
+          </div>
+          <div class="consultoria-item">
+            <span class="consultoria-item-icon">⚖️</span>
+            <strong>Adequação à LGPD</strong>
+            <p>Diagnóstico de conformidade e orientações práticas para adequação à lei.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/5542998650294?text=Olá%20Lucas!%20Gostaria%20de%20saber%20mais%20sobre%20a%20*Consultoria%20de%20TI*."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary consultoria-cta">
+          💬 Quero uma consultoria
+        </a>
+      </div>
     </div>
   </section>
 
@@ -405,6 +472,32 @@
         </a>
       </article>
 
+      <!-- Card Consultoria de TI na tabela de preços -->
+      <article class="preco-card preco-card--consultoria reveal">
+        <div class="preco-badge preco-badge--consultoria">NOVO</div>
+        <p class="preco-tier">Consultoria</p>
+        <h3 class="preco-title">Consultoria de TI</h3>
+        <div class="preco-range">
+          <p class="preco-from">investimento</p>
+          <p class="preco-val preco-val--consultar">A consultar</p>
+        </div>
+        <p class="preco-obs">Diagnóstico personalizado conforme o porte e complexidade do ambiente</p>
+        <hr class="preco-divider">
+        <ul class="preco-items">
+          <li class="preco-item preco-item--yes">Relatório de diagnóstico</li>
+          <li class="preco-item preco-item--yes">Análise de segurança</li>
+          <li class="preco-item preco-item--yes">Avaliação de custos</li>
+          <li class="preco-item preco-item--yes">Plano de modernização</li>
+          <li class="preco-item preco-item--yes">Suporte pós-entrega</li>
+          <li class="preco-item preco-item--yes">Orientação para LGPD</li>
+        </ul>
+        <a href="https://wa.me/5542998650294?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20*Consultoria%20de%20TI*."
+           target="_blank" rel="noopener noreferrer"
+           class="preco-cta preco-cta--filled">
+          Solicitar Consultoria
+        </a>
+      </article>
+
     </div>
   </section>
 
@@ -414,31 +507,66 @@
       <p class="section-eyebrow">// como funciona</p>
       <h2 class="section-h2">Do briefing ao <span>deploy</span></h2>
     </header>
-    <div class="processo-grid">
-      <div class="processo-step reveal">
-        <p class="step-num">01</p>
-        <h3 class="step-title">Briefing</h3>
-        <p class="step-desc">Você me conta o que precisa — público-alvo, estilo, referências e funcionalidades. Levanto tudo por WhatsApp ou call.</p>
+
+    <!-- Bloco: Sites, Landing Pages & Sistemas -->
+    <div class="processo-bloco">
+      <p class="processo-bloco-label">🌐 Sites, Landing Pages &amp; Sistemas</p>
+      <div class="processo-grid">
+        <div class="processo-step reveal">
+          <p class="step-num">01</p>
+          <h3 class="step-title">Briefing</h3>
+          <p class="step-desc">Você me conta o que precisa — público-alvo, estilo, referências e funcionalidades. Levanto tudo por WhatsApp ou call.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">02</p>
+          <h3 class="step-title">Proposta</h3>
+          <p class="step-desc">Envio orçamento detalhado com escopo, prazo e valores. Sem surpresas. Aprovado, começamos.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">03</p>
+          <h3 class="step-title">Desenvolvimento</h3>
+          <p class="step-desc">Código limpo, responsivo e com boas práticas. Você acompanha o progresso e dá feedbacks durante o processo.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">04</p>
+          <h3 class="step-title">Ajustes Finais</h3>
+          <p class="step-desc">Revisão completa com você. Refinamos detalhes, corrigimos o que for necessário até estar exatamente como imaginado.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">05</p>
+          <h3 class="step-title">Entrega &amp; Suporte</h3>
+          <p class="step-desc">Deploy, domínio configurado e site no ar. Suporte incluso no período contratado para ajustes e dúvidas.</p>
+        </div>
       </div>
-      <div class="processo-step reveal">
-        <p class="step-num">02</p>
-        <h3 class="step-title">Proposta</h3>
-        <p class="step-desc">Envio orçamento detalhado com escopo, prazo e valores. Sem surpresas. Aprovado, começamos.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="step-num">03</p>
-        <h3 class="step-title">Desenvolvimento</h3>
-        <p class="step-desc">Código limpo, responsivo e com boas práticas. Você acompanha o progresso e dá feedbacks durante o processo.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="step-num">04</p>
-        <h3 class="step-title">Ajustes Finais</h3>
-        <p class="step-desc">Revisão completa com você. Refinamos detalhes, corrigimos o que for necessário até estar exatamente como imaginado.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="step-num">05</p>
-        <h3 class="step-title">Entrega & Suporte</h3>
-        <p class="step-desc">Deploy, domínio configurado e site no ar. Suporte incluso no período contratado para ajustes e dúvidas.</p>
+    </div>
+
+    <!-- Divisor visual entre os dois blocos -->
+    <div class="processo-divisor reveal" aria-hidden="true"></div>
+
+    <!-- Bloco: Consultoria de TI -->
+    <div class="processo-bloco processo-bloco--consultoria">
+      <p class="processo-bloco-label">🔍 Consultoria de TI — como funciona</p>
+      <div class="processo-grid processo-grid--4c">
+        <div class="processo-step reveal">
+          <p class="step-num">01</p>
+          <h3 class="step-title">Contato Inicial</h3>
+          <p class="step-desc">Você entra em contato pelo WhatsApp ou e-mail descrevendo o contexto da empresa. Faço uma triagem rápida para entender o porte e complexidade do ambiente.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">02</p>
+          <h3 class="step-title">Diagnóstico</h3>
+          <p class="step-desc">Analiso a infraestrutura atual — servidores, redes, softwares, custos e segurança. Pode ser presencial ou remoto. Identifico gargalos e vulnerabilidades.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">03</p>
+          <h3 class="step-title">Relatório &amp; Plano</h3>
+          <p class="step-desc">Entrego um relatório técnico completo com os achados e um plano de ação priorizado — o que resolver agora, o que pode esperar, e o que vale investir.</p>
+        </div>
+        <div class="processo-step reveal">
+          <p class="step-num">04</p>
+          <h3 class="step-title">Suporte &amp; Acompanhamento</h3>
+          <p class="step-desc">Estou disponível para tirar dúvidas, acompanhar a execução das melhorias e ajustar o plano conforme a empresa evolui. Sem abandono depois da entrega.</p>
+        </div>
       </div>
     </div>
   </section>
