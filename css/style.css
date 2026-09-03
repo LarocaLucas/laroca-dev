@@ -5,6 +5,12 @@
    Fontes: Orbitron (display) + Rajdhani (corpo) + Share Tech Mono (código)
    ============================================================ */
 
+/* ── SVG ICON SIZING ───────────────────────────────────────── */
+.dor-icon svg { width: 1.4rem; height: 1.4rem; }
+.servico-icon svg { width: 2rem; height: 2rem; }
+.consultoria-icon svg { width: 2.5rem; height: 2.5rem; }
+.consultoria-item-icon svg { width: 1.5rem; height: 1.5rem; }
+
 /* ── RESET & VARIÁVEIS ──────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
